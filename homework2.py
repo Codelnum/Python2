@@ -4,7 +4,6 @@ num_list = list(input('enter nums:  ').replace(',', '').replace('.',''))
 sum = 0
 i = 0
 while i < len(num_list):
-    #почему не работает for i in num_list( list indices must be integers or slices, not str)?
     sum = sum + int(num_list[i])
     i = i + 1
 print(sum)
