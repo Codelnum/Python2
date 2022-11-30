@@ -67,3 +67,24 @@
 # Пример:
 
 # - для k = 8 список будет выглядеть так: [-21 ,13, -8, 5, −3, 2, −1, 1, 0, 1, 1, 2, 3, 5, 8, 13, 21]
+
+num = int(input('enter num:  '))
+neg = -num
+nfib1 = 1
+nfib2 = -1
+fibo_list = [0]
+for i in range (neg,0):
+    nfib3=nfib1-nfib2
+    fibo_list.insert(0,nfib1)
+    nfib1=nfib2
+    nfib2=nfib3
+
+fib1 = 1
+fib2 = 1
+for i in range(0,num):
+    fib3=fib2+fib1
+    fibo_list.append(fib1)
+    fib1=fib2
+    fib2=fib3
+print(fibo_list)
+
