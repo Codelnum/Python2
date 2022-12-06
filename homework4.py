@@ -48,24 +48,26 @@
 # 4 Задана натуральная степень k. Сформировать случайным образом список коэффициентов (значения от 0 до 100) многочлена и записать в файл многочлен степени k.
 # *Пример:* 
 # - k=2 => 2*x² + 4*x + 5 = 0 или x² + 5 = 0 или 10*x² = 0
-# import random
-# k = int(input('enter k: '))
-
-# def a(x):
-#     a = random.randint(2, 10*x)
-#     return a
-
-# result_list = []
-# count=k
-# mult_string =(f'{a(k)}*x**{k}')
-# while count>1:
-#     mult_string =mult_string+ ' + ' +(f'{a(k)}*x**{count-1}')
-#     count-=1 
-# print(mult_string + ' + ' +(f'{a(k)} = 0'))
 
 
 
+import random
+k = int(input('enter k: '))
 
+def a(x):
+    a = random.randint(2, 10*x)
+    return a
+
+result_list = []
+count=k
+mult_string =(f'{a(k)}*x**{k}')
+while count>1:
+    mult_string =mult_string+ ' + ' +(f'{a(k)}*x**{count-1}')
+    count-=1 
+
+file = open('hw4.txt', 'w')
+file.write(mult_string + ' + ' +(f'{a(k)} = 0'))
+file.close()
 
 # 5 Даны два файла, в каждом из которых находится запись многочлена. Задача - сформировать файл, содержащий сумму многочленов.
 # Коэффициенты могут быть как положительными, так и отрицательными. Степени многочленов могут отличаться.
