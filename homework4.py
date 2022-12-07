@@ -49,25 +49,50 @@
 # *Пример:* 
 # - k=2 => 2*x² + 4*x + 5 = 0 или x² + 5 = 0 или 10*x² = 0
 
+# import random
+# k = random.randint(1,5)
+
+# def a(x):
+#     a = random.randint(2, 10*x)
+#     return a
+
+# result_list = []
+
+# def mult(x):
+#     mult_string =(f'{a(x)}*x**{x}')
+#     while x>1:
+#         mult_string =mult_string+ ' + ' +(f'{a(x)}*x**{x-1}')
+#         x-=1 
+#     return mult_string
+
+# file = open('hw4(1).txt', 'w')
+# file.write(mult(k) + ' + ' +(f'{a(k)} = 0'))
+# file.close()
 
 
-import random
-k = int(input('enter k: '))
+# k = random.randint(1,5)
+# file = open('hw4(2).txt', 'w')
+# file.write(mult(k) + ' + ' +(f'{a(k)} = 0'))
+# file.close()
 
-def a(x):
-    a = random.randint(2, 10*x)
-    return a
 
-result_list = []
-count=k
-mult_string =(f'{a(k)}*x**{k}')
-while count>1:
-    mult_string =mult_string+ ' + ' +(f'{a(k)}*x**{count-1}')
-    count-=1 
-
-file = open('hw4.txt', 'w')
-file.write(mult_string + ' + ' +(f'{a(k)} = 0'))
-file.close()
 
 # 5 Даны два файла, в каждом из которых находится запись многочлена. Задача - сформировать файл, содержащий сумму многочленов.
 # Коэффициенты могут быть как положительными, так и отрицательными. Степени многочленов могут отличаться.
+
+file = open('hw4(1).txt', 'r')
+str1 = file.read()
+file.close()
+str1= str1.replace('*','').replace('+','').replace('= 0','')
+lst1=list(str1.split())
+lst1.reverse()
+print(lst1)
+
+
+# file = open('hw4(2).txt', 'r')
+# str2 = file.read()
+# file.close()
+# str2= str2.replace('*','').replace('+','').replace('= 0','')
+# lst2=list(str2.split())
+# lst2.reverse()
+# print(lst2)
