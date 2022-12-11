@@ -84,19 +84,50 @@
 # 5 Даны два файла, в каждом из которых находится запись многочлена. Задача - сформировать файл, содержащий сумму многочленов.
 # Коэффициенты могут быть как положительными, так и отрицательными. Степени многочленов могут отличаться.
 
-file = open('hw4(1).txt', 'r')
-str1 = file.read()
-file.close()
-str1= str1.replace('*','').replace('+','').replace('= 0','')
-lst1=list(str1.split())
-lst1.reverse()
-print(lst1)
+# file = open('hw4(1).txt', 'r')
+# str1 = file.read()
+# file.close()
+# file = open('hw4(2).txt', 'r')
+# str2 = file.read()
+# file.close()
 
 
-file = open('hw4(2).txt', 'r')
-str2 = file.read()
-file.close()
-str2= str2.replace('*','').replace('+','').replace('= 0','')
-lst2=list(str2.split())
-lst2.reverse()
-print(lst2)
+# def str_repl_to_rev_list(string):
+#     lst=[]
+#     for i in range(1, len(string)):
+#         string = string.replace(f'*x**{i}', '')
+#         i+=1
+#     string= string.replace('+','').replace('= 0','')
+#     lst=list(map(int, string.split()))
+#     lst.reverse()
+#     return lst
+
+# lst1 = str_repl_to_rev_list(str1)
+# lst2 = str_repl_to_rev_list(str2)
+
+# if len(lst1)>len(lst2):
+#     while len(lst2)!= len(lst1):
+#         lst2.append(0)
+# else:
+#     while len(lst1)!= len(lst2):
+#         lst1.append(0)    
+
+
+# res_list=[]
+# for i, k in zip(lst1,lst2):
+#     summ = i+k 
+#     res_list.append(summ)
+
+# print(res_list)
+
+
+# total_list=[]
+
+# for i in range(0, len(res_list)):
+#     if i == 0:
+#         total_list.append(str(res_list[i]))
+#         # total_list.append('+')
+#     else:
+#         total_list.append(str(res_list[i])+f'x**{i}')
+
+# print(total_list)
