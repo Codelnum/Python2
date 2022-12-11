@@ -61,26 +61,26 @@
 # --------------
 #  7  |  8 | 9
 # .
-# import random
-# desk = '_1_|_2_|_3_|\n_4_|_5_|_6_|\n_7_|_8_|_9_|'
+import random
+desk = '_1_|_2_|_3_|\n_4_|_5_|_6_|\n_7_|_8_|_9_|'
 
-# for i in range(0,5):
-#     cell = input(f"{desk}\n В какую ячейку ставим X?:  ")
-#     while cell not in desk:
-#         print('!!!wrong cell!!!')
-#         cell = input(f"{desk}\n В какую ячейку ставим X?:  ")
-#     desk = desk.replace(f'{cell}','X')
-#     if '1' and '2' and '3' and '4' and '5' and '6' and '7' and '8' and '9' in desk: # почему с or не работает а с and работает?
-#         cell2 = (f'{random.randint(1,9)}')
-#         while cell2 not in desk:
-#             cell2 = (f'{random.randint(1,9)}')
-#         if cell2 in desk:
-#             desk = desk.replace(f'{cell2}','0')
-#             print(f"{desk}\n В какую ячейку ставим x?:  ")
-#     else:
-#         print(desk) 
-#         break
-# print('finish!')
+for i in range(0,5):
+    cell = input(f"{desk}\n В какую ячейку ставим X?:  ")
+    while cell not in desk:
+        print('\n         !!!wrong cell!!!\n')
+        cell = input(f"{desk}\n В какую ячейку ставим X?:  ")
+    desk = desk.replace(f'{cell}','X')
+    if '1'in desk or '2'in desk or '3'in desk or '4'in desk or '5'in desk or '6'in desk or '7'in desk or '8' in desk or '9' in desk:
+        cell2 = (f'{random.randint(1,9)}')
+        while cell2 not in desk:
+            cell2 = (f'{random.randint(1,9)}')
+        if cell2 in desk:
+            desk = desk.replace(f'{cell2}','0')
+            print(f"{desk}\n В какую ячейку ставим x?:  ")
+    else:
+        print(desk) 
+        break
+print('finish!')
 
 # 4 Реализуйте RLE алгоритм: реализуйте модуль сжатия и восстановления данных.
 
@@ -102,10 +102,10 @@
 #         out_str+=f'{count}{in_str[i]}'
 #         count=1
 #         i+=1
-# print(out_str) # не пойму куда потерялась последняя буква
+# out_str += f"{count}{in_str[i]}"
+# print(out_str)
 # with open('hw5out.txt', 'w') as file:
 #     file.write(out_str)
-
 
 
 
