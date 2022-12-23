@@ -7,17 +7,17 @@ s_dict = {'Vasya': str(4321),
         'Vova': str(654321)}
 
 
-def login(some_dict):
+def login_check(some_dict):
     user = input("Username:  ")
     passw = input("Password:  ")
     if user in some_dict:
         if some_dict[f'{user}']==passw: 
-            print("Welcome!")
+            print('=WELCOME!=')
             return True
         else:
-            print('wrong login or passw')
+            print('=WRONG PASS!=')
             return False
     else:
-        print('wrong login or passw')
+        print('Wrong login')
         return False
 
