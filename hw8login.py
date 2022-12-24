@@ -1,10 +1,4 @@
-t_dict = {'Ivanov': str(1234),
-        'Petrov': str(12345),
-        'Sidorov': str(123456)}
-
-s_dict = {'Vasya': str(4321),
-        'Petya': str(54321),
-        'Vova': str(654321)}
+from hw8pass_list import *
 
 
 def login_check(some_dict):
@@ -12,7 +6,7 @@ def login_check(some_dict):
     passw = input("Password:  ")
     if user in some_dict:
         if some_dict[f'{user}']==passw: 
-            print('=WELCOME!=')
+            print(f'WELCOME {user}!')
             return True
         else:
             print('=WRONG PASS!=')
@@ -20,4 +14,25 @@ def login_check(some_dict):
     else:
         print('Wrong login')
         return False
+
+def enter():
+    inp = int(input("выберите пункт:\n 1.Вход для преподавателей\n 2.Вход для учеников\n"))
+    if inp == 1:
+        res = login_check(t_dict)
+        if res == True:
+            return inp
+        else:
+            enter()
+    elif inp == 2:
+        res = login_check(s_dict)
+        if res == True:
+            return inp
+        else:
+            enter()
+    else:
+        print('--WRONG CHOICE!--')  
+        enter()                   #после попадания сюда inp == None, как сделать чтобы возвращался inp от вложенной функции?
+ 
+# print(enter())
+
 
