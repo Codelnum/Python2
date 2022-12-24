@@ -1,6 +1,25 @@
 from hw8pass_list import *
 
 
+def enter():
+    inp = int(input("выберите пункт:\n 1.Вход для преподавателей\n 2.Вход для учеников\n"))
+    if inp == 1:
+        res = login_check(t_dict)
+        if res != False:
+            return res
+        else:
+            enter()
+    elif inp == 2:
+        res = login_check(s_dict)
+        if res != False:
+            return res
+        else:
+            enter()
+    else:
+        print('--WRONG CHOICE!--')  
+        enter()                   #после попадания сюда res == None, как сделать чтобы возвращался res от вложенной функции?
+ 
+
 def login_check(some_dict):
     user = input("Username:  ")
     passw = input("Password:  ")
@@ -15,24 +34,6 @@ def login_check(some_dict):
         print('Wrong login')
         return False
 
-def enter():
-    inp = int(input("выберите пункт:\n 1.Вход для преподавателей\n 2.Вход для учеников\n"))
-    if inp == 1:
-        res = login_check(t_dict)
-        if res != False:
-            return inp
-        else:
-            enter()
-    elif inp == 2:
-        res = login_check(s_dict)
-        if res != False:
-            return inp
-        else:
-            enter()
-    else:
-        print('--WRONG CHOICE!--')  
-        enter()                   #после попадания сюда inp == None, как сделать чтобы возвращался inp от вложенной функции?
- 
-
-
+user = enter()
+print(user)
 
