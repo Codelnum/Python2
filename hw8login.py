@@ -1,30 +1,18 @@
 from hw8pass_list import *
 
 
-def enter():
-    inp = int(input("выберите пункт:\n 1.Вход для преподавателей\n 2.Вход для учеников\n"))
-    if inp == 1:
-        res = login_check(t_dict)
-        if res != False:
-            return res
-        else:
-            enter()
-    elif inp == 2:
-        res = login_check(s_dict)
-        if res != False:
-            return res
-        else:
-            enter()
-    else:
-        print('--WRONG CHOICE!--')  
-        enter()                   #после попадания сюда res == None, как сделать чтобы возвращался res от вложенной функции?
- 
+input_num = int(input("1 - Вход для преподавателей\n2 - Вход для учеников\nВведите число:\n"))
+print(f'input num = {input_num}')
+print(type(input_num))
+while input_num != 1 and input_num !=2:
+    print('-WRONG NUM-')
+    input_num = int(input("1 - Вход для преподавателей\n2 - Вход для учеников\nВведите число:\n"))
 
 def login_check(some_dict):
     user = input("Username:  ")
     passw = input("Password:  ")
     if user in some_dict:
-        if some_dict[f'{user}']==passw: 
+        if some_dict[f'{user}'] == passw: 
             print(f'WELCOME {user}!')
             return user
         else:
@@ -34,6 +22,21 @@ def login_check(some_dict):
         print('Wrong login')
         return False
 
-user = enter()
-print(user)
 
+def check(num):
+    if num == 1:
+        user = login_check(t_dict)
+        return user
+    elif num ==2:
+        user = login_check(s_dict)
+        return user
+    else:
+        print('wrong input_num!')
+        return False
+
+true_user = check(input_num)
+
+if true_user == False:
+    check(input_num)
+else:
+    pass     
