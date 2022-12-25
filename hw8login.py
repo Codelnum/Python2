@@ -2,8 +2,6 @@ from hw8pass_list import *
 
 
 input_num = int(input("1 - Вход для преподавателей\n2 - Вход для учеников\nВведите число:\n"))
-print(f'input num = {input_num}')
-print(type(input_num))
 while input_num != 1 and input_num !=2:
     print('-WRONG NUM-')
     input_num = int(input("1 - Вход для преподавателей\n2 - Вход для учеников\nВведите число:\n"))
@@ -16,19 +14,23 @@ def login_check(some_dict):
             print(f'WELCOME {user}!')
             return user
         else:
-            print('=WRONG PASS!=')
+            print('WRONG PASS!')
             return False
-    else:
-        print('Wrong login')
+    else:                           #если зайти сюда то user == none
+        print('WRONG LOGIN!')
         return False
 
 
 def check(num):
     if num == 1:
         user = login_check(t_dict)
+        while user == False:
+            user = login_check(t_dict) 
         return user
     elif num ==2:
         user = login_check(s_dict)
+        while user == False:
+            user = login_check(s_dict) 
         return user
     else:
         print('wrong input_num!')
