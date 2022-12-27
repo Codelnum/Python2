@@ -1,7 +1,5 @@
 from hw8login import true_user, input_num
 
-
-
 if input_num == 1:
     from hw8teachers_list import teach_dict
     from hw8teach_menu import teachers_choice

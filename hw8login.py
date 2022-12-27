@@ -16,7 +16,7 @@ def login_check(some_dict):
         else:
             print('WRONG PASS!')
             return False
-    else:                           #если зайти сюда то user == none
+    else:                           
         print('WRONG LOGIN!')
         return False
 
