@@ -1,4 +1,4 @@
-from lesson7ui import a, b, op  #если написать просто импорт то не подтягивает а,б и оп
+from lesson7ui import a, b, op  
 from lesson7logger import save_log
 
 if 'j' in a or 'j' in b:
