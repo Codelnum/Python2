@@ -122,10 +122,12 @@ def answer(msg: types.Message):
             with open ('lesson7log.txt', 'r') as file:
                 log_list = file.readlines()
                 out_list=[]
+                out_text=''
                 for i in range(1,num+1):
                     out_list.append(log_list[-i])       
                 for i in range(0,num):
-                    bot.send_message(chat_id=msg.from_user.id, text = out_list[i])
+                    out_text = out_text+out_list[i]
+                bot.send_message(chat_id=msg.from_user.id, text = out_text)
                 bot.send_message(chat_id=msg.from_user.id, text = 'Список доступных команд:\n/help - хэлп\n/math - считалка\n/log - смотрелка\n/dwnld_log -скачать логфайл')
         else:
             bot.send_message(chat_id=msg.from_user.id, text = msg.text +' не  число, введите число')
