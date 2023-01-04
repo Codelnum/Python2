@@ -3,7 +3,7 @@ import time
 seconds = time.time()
 local_time = time.ctime(seconds)
 
-Token = '5809540569:AAE-lQUxyJu16mMOo0GTuQq5_64N8UfpQEk'
+Token = ''
  
 bot = TeleBot(Token)
 
