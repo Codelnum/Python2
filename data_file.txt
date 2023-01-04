@@ -1,0 +1,8 @@
+      Name    Surname   Number        Info
+0     Ivan     Ivanov   684615    ksjfknrv
+1     Petr     Petrov  6546846  lkdnakcdna
+2  Kseniya   Semenova  6167163    bad girl
+3     Ivan     Ivanov   684615    ksjfknrv
+4     Petr     Petrov  6546846  lkdnakcdna
+5    Input       File      123         NaN
+6    Fedor  ksjbckhrd  1351616         cat
